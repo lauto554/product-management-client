@@ -38,34 +38,34 @@ export default function NewProduct() {
 
   return (
     <>
-      <div className="flex flex-col justify-between mb-8">
-        <div className="flex justify-between">
-          <h2 className="text-4xl font-black text-cyan-700 underline decoration-cyan-700 decoration-4">
+      <div className="flex flex-col justify-between mb-3 md:mb-8 p-2">
+        <div className="flex justify-between items-center mt-2">
+          <h2 className="ml-1 text-3xl md:text-4xl font-black text-cyan-700 underline decoration-cyan-700 decoration-4">
             Nuevo Producto
           </h2>
           <Link
             to={'/'}
-            className="bg-emerald-700 p-3 text-base font-bold text-white shadow-md hover:bg-emerald-800 rounded"
+            className="bg-emerald-700 p-2 text-sm md:text-base font-bold text-white shadow-md hover:bg-emerald-800 rounded-lg"
           >
-            Volver a Productos
+            Volver
           </Link>
         </div>
-        <p className="mt-8 text-lg">
+        <p className="mt-6 text-base md:text-lg">
           Llena el siguiente formulario para almacenar un{' '}
           <span className="italic"> nuevo producto</span>
         </p>
+        <div className="border-t-2 mt-6 md:mt-10"></div>
       </div>
-      <div className="w-full border-t-2"></div>
 
       {errors?.field && <ErrorMessage>{errors.field}</ErrorMessage>}
       {errors?.price && <ErrorMessage>{errors.price}</ErrorMessage>}
 
-      <Form className="mt-8" method="POST">
+      <Form className="mt-3 p-2" method="POST">
         <ProductForm />
         <input
           type="submit"
           value="Crear Producto"
-          className="w-full text-lg font-bold mt-8 p-3  text-white bg-cyan-700 hover:bg-cyan-800 cursor-pointer rounded"
+          className="w-full text-lg font-bold mt-5 p-3  text-white bg-cyan-700 hover:bg-cyan-800 cursor-pointer rounded"
         />
       </Form>
     </>

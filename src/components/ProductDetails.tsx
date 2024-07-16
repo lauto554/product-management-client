@@ -22,9 +22,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
   return (
     <tr className="border-b ">
-      <td className="p-3 text-lg text-gray-800">{product.name}</td>
-      <td className="p-3 text-lg text-gray-800">{formatCurrency(product.price)}</td>
-      <td className="p-3 text-lg text-gray-800">
+      <td className="p-2 text-sm md:text-lg text-gray-800">{product.name}</td>
+      <td className="p-2 text-sm md:text-lg text-gray-800">{formatCurrency(product.price)}</td>
+      <td className="p-2 text-sm md:text-lg text-gray-800">
         <fetcher.Form method="POST">
           <button
             type="submit"
@@ -32,17 +32,17 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             value={product.id}
             className={`${
               isAvailable ? 'text-black' : 'text-red-600'
-            } rounded-lg p-2 text-sm uppercase font-bold w-full border border-black-100`}
+            } rounded-lg p-1 text-sm uppercase font-bold w-full border border-black-100`}
           >
             {isAvailable ? 'Disponible' : 'No disponible'}
           </button>
         </fetcher.Form>
       </td>
-      <td className="p-3 text-lg text-gray-800 ">
+      <td className="p-2 text-lg text-gray-800 ">
         <div className="flex flex-col md:flex-row gap-3">
           <button
             type="button"
-            className="p-2 rounded w-full bg-cyan-700 text-white text-sm uppercase"
+            className="p-1 rounded w-full bg-cyan-700 text-white text-sm uppercase"
             onClick={() => {
               navigate(`/productos/${product.id}/editar`);
             }}
